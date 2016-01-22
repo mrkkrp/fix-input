@@ -65,7 +65,7 @@ input methods, they all must be different.
 This function uses Quail (and assumes that all input methods are
 defined with it), but it does not select the new package."
   (when (or (string= base-method old-method)
-            (string= old-method  new-method)
+            (string= base-method new-method)
             (string= new-method  old-method))
     (error "All input methods must be different"))
   (fix-input--load-libs base-method)
