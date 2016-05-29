@@ -1,7 +1,7 @@
 # Fix Input
 
 [![License GPL 3](https://img.shields.io/badge/license-GPL_3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.txt)
-[![MELPA](http://melpa.org/packages/fix-input-badge.svg)](http://melpa.org/#/fix-input)
+[![MELPA](https://melpa.org/packages/fix-input-badge.svg)](https://melpa.org/#/fix-input)
 [![Build Status](https://travis-ci.org/mrkkrp/fix-input.svg?branch=master)](https://travis-ci.org/mrkkrp/fix-input)
 
 Suppose that you have switched to Dvorak or Colemak. Chances are you're
