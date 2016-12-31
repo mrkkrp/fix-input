@@ -1,6 +1,6 @@
 ;;; fix-input.el --- Make input methods play nicely with alternative keyboard layout on OS level -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2016 Mark Karpov <markkarpov@openmailbox.org>
+;; Copyright © 2016–2017 Mark Karpov <markkarpov@openmailbox.org>
 ;;
 ;; Author: Mark Karpov <markkarpov@openmailbox.org>
 ;; URL: https://github.com/mrkkrp/fix-input

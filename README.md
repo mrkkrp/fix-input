@@ -50,6 +50,6 @@ Once generated, the layout can be used as usual.
 
 ## License
 
-Copyright © 2016 Mark Karpov
+Copyright © 2016–2017 Mark Karpov
 
 Distributed under GNU GPL, version 3.
