@@ -26,10 +26,10 @@
 ;;; Commentary:
 
 ;; Suppose that you have switched to Dvorak or Colemak.  Chances are you're
-;; going to use that layout everywhere, not only in Emacs (the fact is, we
-;; still need to leave Emacs sometimes and use other programs), so you setup
-;; it on OS level or maybe you even have “hardware” Dvorak keyboard.  You
-;; adapt to this new layout and everything is OK.
+;; going to use that layout everywhere, not only in Emacs (we still need to
+;; leave Emacs sometimes and use other programs), so you setup it on OS
+;; level or maybe you even have “hardware” Dvorak keyboard.  You adapt to
+;; this new layout and everything is OK.
 ;;
 ;; Now suppose that you need to input non-Latin text and for that you
 ;; naturally need to activate an input method in Emacs.  The nightmare
@@ -51,13 +51,13 @@
 
 ;;;###autoload
 (defun fix-input (base-method old-method new-method)
-  "Adjust input method for alternative Latin layout on OS level.
+  "Adjust the input method for alternative Latin layout on OS level.
 
 In fact, entirely new input method is generated.  BASE-METHOD
-describes new alternative layout on OS level.  OLD-METHOD will be
-copied as NEW-METHOD so the layout in which keys are laid on the
-keyboard when OLD-METHOD is used with QWERTY will be the same
-when NEW-METHOD is used with that new alternative layout.
+describes the new alternative layout on OS level.  OLD-METHOD
+will be copied as NEW-METHOD so the layout in which keys are laid
+on the keyboard when OLD-METHOD is used with QWERTY will be the
+same when NEW-METHOD is used with that new alternative layout.
 
 BASE-METHOD, OLD-METHOD, and NEW-METHOD are strings — names of
 input methods, they all must be different.
@@ -80,13 +80,13 @@ defined with it), but it does not select the new package."
            (lambda (item)
              (when item
                (cl-destructuring-bind (ch . val) item
-                 ;; NOTE The approach may be brittle, since it does not
-                 ;; account for all possible formats of the translation map
+                 ;; NOTE The approach may be brittle, since it does not take
+                 ;; into account all possible formats of the translation map
                  ;; (described in docs for `quile-map-p'), only for the
                  ;; format I have encountered in practice with input methods
                  ;; that are of interest for me. If this does not work for
                  ;; you, open an issue on GitHub issue tracker of the
-                 ;; project (or even better a PR if you can fix it
+                 ;; project (or even better open a PR if you can fix it
                  ;; yourself).
                  (cons
                   (or (elt (elt (cadr (assoc ch base-map)) 0) 0) ch)
@@ -108,8 +108,8 @@ defined with it), but it does not select the new package."
 (defun fix-input--load-libs (input-method)
   "Load libraries for specified INPUT-METHOD, but do not activate it.
 
-If INPUT-METHOD is not defined, error.  Return list of libraries
-loaded."
+If INPUT-METHOD is not defined, signal an error.  Return the list
+of libraries loaded."
   (let ((slot (assoc input-method input-method-alist)))
     (unless slot
       (error "No such input method: ‘%s’" input-method))

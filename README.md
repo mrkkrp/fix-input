@@ -5,10 +5,10 @@
 [![Build Status](https://travis-ci.org/mrkkrp/fix-input.svg?branch=master)](https://travis-ci.org/mrkkrp/fix-input)
 
 Suppose that you have switched to Dvorak or Colemak. Chances are you're
-going to use that layout everywhere, not only in Emacs (the fact is, we
-still need to leave Emacs sometimes and use other programs), so you setup it
-on OS level or maybe you even have “hardware” Dvorak keyboard. You adapt to
-this new layout and everything is OK.
+going to use that layout everywhere, not only in Emacs (we still need to
+leave Emacs sometimes and use other programs), so you setup it on OS level
+or maybe you even have a “hardware” Dvorak keyboard. You adapt to this new
+layout and everything is OK.
 
 Now suppose that you need to input non-Latin text and for that you naturally
 need to activate an input method in Emacs. The nightmare begins: input
@@ -44,7 +44,7 @@ example:
 ```
 
 Here we get new input method named `"dvorak-russian"`. With Dvorak layout,
-this will let users use familiar layout when they wish to type Russian.
+this will let users use the familiar layout when they wish to type Russian.
 
 Once generated, the layout can be used as usual.
 
