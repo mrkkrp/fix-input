@@ -25,10 +25,10 @@
 
 ;;; Commentary:
 
-;; Suppose that you have switched to Dvorak or Colemak.  Chances are you're
-;; going to use that layout everywhere, not only in Emacs (we still need to
-;; leave Emacs sometimes and use other programs), so you setup it on OS
-;; level or maybe you even have “hardware” Dvorak keyboard.  You adapt to
+;; Let's suppose that you have switched to Dvorak or Colemak.  Chances are
+;; you're going to use that layout everywhere, not only in Emacs (we still
+;; need to leave Emacs sometimes and use other programs), so you setup it on
+;; OS level or maybe you even have hardware Dvorak keyboard.  You adapt to
 ;; this new layout and everything is OK.
 ;;
 ;; Now suppose that you need to input non-Latin text and for that you
@@ -37,12 +37,13 @@
 ;; on a traditional QWERTY layout.  So now the input method you used before
 ;; does not work anymore.
 ;;
-;; One solution is to define new custom input method and call it for example
-;; `dvorak-russian'.  But that is not a general solution for the problem —
-;; we want to be able to make any existing input method work just the same
-;; with any Latin layout on OS level.  This package generates “fixed” input
-;; methods knowing input method that corresponds to layout on OS level and
-;; input method you want to fix.  And I want to tell you — it's a win.
+;; One solution is to define a new custom input method and call it for
+;; example `dvorak-russian'.  But that is not a general solution to the
+;; problem—we want to be able to make any existing input method work just
+;; the same with any Latin layout on OS level.  This package generates
+;; “fixed” input methods knowing input method that corresponds to layout on
+;; OS level and input method you want to fix.  And I want to tell you—it's a
+;; win.
 
 ;;; Code:
 
@@ -51,7 +52,7 @@
 
 ;;;###autoload
 (defun fix-input (base-method old-method new-method)
-  "Adjust the input method for alternative Latin layout on OS level.
+  "Adjust an input method for an alternative Latin layout on OS level.
 
 In fact, entirely new input method is generated.  BASE-METHOD
 describes the new alternative layout on OS level.  OLD-METHOD
@@ -59,7 +60,7 @@ will be copied as NEW-METHOD so the layout in which keys are laid
 on the keyboard when OLD-METHOD is used with QWERTY will be the
 same when NEW-METHOD is used with that new alternative layout.
 
-BASE-METHOD, OLD-METHOD, and NEW-METHOD are strings — names of
+BASE-METHOD, OLD-METHOD, and NEW-METHOD are strings—names of
 input methods, they all must be different.
 
 This function uses Quail (and assumes that all input methods are
@@ -82,11 +83,11 @@ defined with it), but it does not select the new package."
                (cl-destructuring-bind (ch . val) item
                  ;; NOTE The approach may be brittle, since it does not take
                  ;; into account all possible formats of the translation map
-                 ;; (described in docs for `quile-map-p'), only for the
+                 ;; (described in the docs for `quile-map-p'), only for the
                  ;; format I have encountered in practice with input methods
                  ;; that are of interest for me. If this does not work for
                  ;; you, open an issue on GitHub issue tracker of the
-                 ;; project (or even better open a PR if you can fix it
+                 ;; project (or better yet open a PR if you can fix it
                  ;; yourself).
                  (cons
                   (or (elt (elt (cadr (assoc ch base-map)) 0) 0) ch)
@@ -106,7 +107,7 @@ defined with it), but it does not select the new package."
   nil)
 
 (defun fix-input--load-libs (input-method)
-  "Load libraries for specified INPUT-METHOD, but do not activate it.
+  "Load libraries for the specified INPUT-METHOD, but do not activate it.
 
 If INPUT-METHOD is not defined, signal an error.  Return the list
 of libraries loaded."
