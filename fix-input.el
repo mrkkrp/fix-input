@@ -1,6 +1,6 @@
 ;;; fix-input.el --- Make input methods play nicely with alternative keyboard layout on OS level -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2016–2019 Mark Karpov <markkarpov92@gmail.com>
+;; Copyright © 2016–present Mark Karpov <markkarpov92@gmail.com>
 ;;
 ;; Author: Mark Karpov <markkarpov92@gmail.com>
 ;; URL: https://github.com/mrkkrp/fix-input
