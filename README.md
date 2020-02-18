@@ -2,7 +2,7 @@
 
 [![License GPL 3](https://img.shields.io/badge/license-GPL_3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.txt)
 [![MELPA](https://melpa.org/packages/fix-input-badge.svg)](https://melpa.org/#/fix-input)
-[![Build Status](https://travis-ci.org/mrkkrp/fix-input.svg?branch=master)](https://travis-ci.org/mrkkrp/fix-input)
+[![CircleCI](https://circleci.com/gh/mrkkrp/fix-input/tree/master.svg?style=svg)](https://circleci.com/gh/mrkkrp/fix-input/tree/master)
 
 Let's suppose you have switched to Dvorak or Colemak. Chances are you're
 going to use that layout everywhere, not only in Emacs (we still need to
