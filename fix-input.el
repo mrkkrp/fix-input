@@ -25,25 +25,20 @@
 
 ;;; Commentary:
 
-;; Let's suppose that you have switched to Dvorak or Colemak.  Chances are
-;; you're going to use that layout everywhere, not only in Emacs (we still
-;; need to leave Emacs sometimes and use other programs), so you setup it on
-;; OS level or maybe you even have hardware Dvorak keyboard.  You adapt to
-;; this new layout and everything is OK.
-;;
-;; Now suppose that you need to input non-Latin text and for that you
-;; naturally need to activate an input method in Emacs.  The nightmare
-;; begins: input methods in Emacs translate Latin characters as if they are
-;; on a traditional QWERTY layout.  So now the input method you used before
-;; does not work anymore.
+;; Let's suppose you have switched to an alternative keyboard layout.
+;; Chances are you're going to use that layout everywhere, not only in
+;; Emacs, so you set it up on the OS level or maybe you even get a special
+;; keyboard that uses that layout.  Now suppose that you need to use an
+;; input method in Emacs.  The nightmare begins: the input methods in Emacs
+;; translate Latin characters assuming the traditional QWERTY layout.  With
+;; an alternative keyboard layout, the input methods do not work anymore.
 ;;
 ;; One solution is to define a new custom input method and call it for
 ;; example `dvorak-russian'.  But that is not a general solution to the
-;; problem—we want to be able to make any existing input method work just
-;; the same with any Latin layout on OS level.  This package generates
-;; “fixed” input methods knowing input method that corresponds to layout on
-;; OS level and input method you want to fix.  And I want to tell you—it's a
-;; win.
+;; problem—we want to be able to make any existing input method work with
+;; any Latin layout on the OS level.  This package generates input methods
+;; knowing the input method that corresponds to the layout on the OS level
+;; and the input method you want to fix.
 
 ;;; Code:
 
@@ -52,13 +47,14 @@
 
 ;;;###autoload
 (defun fix-input (base-method old-method new-method)
-  "Adjust an input method for an alternative Latin layout on OS level.
+  "Adjust an input method to an alternative layout on the OS level.
 
-In fact, entirely new input method is generated.  BASE-METHOD
-describes the new alternative layout on OS level.  OLD-METHOD
-will be copied as NEW-METHOD so the layout in which keys are laid
-on the keyboard when OLD-METHOD is used with QWERTY will be the
-same when NEW-METHOD is used with that new alternative layout.
+In fact, an entirely new input method is generated.  The
+BASE-METHOD describes the new alternative layout on OS level.
+The OLD-METHOD will be copied as NEW-METHOD so the layout in
+which the keys are laid on the keyboard when the OLD-METHOD is
+used with QWERTY will be the same when the NEW-METHOD is used
+with that new alternative layout.
 
 BASE-METHOD, OLD-METHOD, and NEW-METHOD are strings—names of
 input methods, they all must be different.
@@ -107,10 +103,10 @@ defined with it), but it does not select the new package."
   nil)
 
 (defun fix-input--load-libs (input-method)
-  "Load libraries for the specified INPUT-METHOD, but do not activate it.
+  "Load the libraries for the specified INPUT-METHOD, but do not activate it.
 
-If INPUT-METHOD is not defined, signal an error.  Return the list
-of libraries loaded."
+If the INPUT-METHOD is not defined, signal an error.  Return the
+list of libraries loaded."
   (let ((slot (assoc input-method input-method-alist)))
     (unless slot
       (error "No such input method: ‘%s’" input-method))

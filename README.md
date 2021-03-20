@@ -4,37 +4,38 @@
 [![MELPA](https://melpa.org/packages/fix-input-badge.svg)](https://melpa.org/#/fix-input)
 ![CI](https://github.com/mrkkrp/fix-input/workflows/CI/badge.svg?branch=master)
 
-Let's suppose you have switched to Dvorak or Colemak. Chances are you're
-going to use that layout everywhere, not only in Emacs (we still need to
-leave Emacs sometimes and use other programs), so you setup it on OS level
-or maybe you even have a hardware Dvorak keyboard. You adapt to this new
-layout and everything is OK.
-
-Now suppose that you need to input non-Latin text and for that you naturally
-need to activate an input method in Emacs. The nightmare begins: input
-methods in Emacs translate Latin characters as if they are on a traditional
-QWERTY layout. So now the input method you used before does not work
-anymore.
+Let's suppose you have switched to an alternative keyboard layout. Chances
+are you're going to use that layout everywhere, not only in Emacs, so you
+set it up on the OS level or maybe you even get a special keyboard that uses
+that layout. Now suppose that you need to use an input method in Emacs. The
+nightmare begins: the input methods in Emacs translate Latin characters
+assuming the traditional QWERTY layout. With an alternative keyboard layout,
+the input methods do not work anymore.
 
 One solution is to define a new custom input method and call it for example
 `dvorak-russian`. But that is not a general solution to the problem—we want
-to be able to make any existing input method work just the same with any
-Latin layout on OS level. This package generates “fixed” input methods
-knowing input method that corresponds to layout on OS level and input method
-you want to fix. And I want to tell you—it's a win.
+to be able to make any existing input method work with any Latin layout on
+the OS level. This package generates input methods knowing the input method
+that corresponds to the layout on the OS level and the input method you want
+to fix.
 
 ## Installation
 
-Download this package and place it somewhere, so Emacs can see it. Then put
-`(require 'fix-input)` into your configuration file. Done!
+The package is available via MELPA, so you can just type `M-x
+package-install RET fix-input RET`.
 
-To install the package via MELPA, execute: <kbd>M-x package-install RET
-fix-input RET</kbd>.
+If you would like to install the package manually, download or clone it and
+put on Emacs' `load-path`. Then you can require it in your init file like
+this:
+
+```emacs-lisp
+(require 'fix-input)
+```
 
 ## Usage
 
-In your configuration you need to generate new “corrected” input method, for
-example:
+In your configuration you need to generate a new “corrected” input method,
+for example:
 
 ```emacs-lisp
 (fix-input "english-dvorak"   ;; matches alternative layout
@@ -43,8 +44,9 @@ example:
                               ;; the same layout with Dvorak
 ```
 
-Here we get new input method named `"dvorak-russian"`. With Dvorak layout,
-this will let users use the familiar layout when they wish to type Russian.
+Here the new input method is named `"dvorak-russian"`. With Dvorak layout,
+this will let users to use the familiar layout when they wish to type
+Russian.
 
 Once generated, the layout can be used as usual.
 
