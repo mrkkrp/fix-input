@@ -1,4 +1,4 @@
-;;; fix-input.el --- Make input methods play nicely with alternative keyboard layout on OS level -*- lexical-binding: t; -*-
+;;; fix-input.el --- Make input methods play nicely with alternative layouts -*- lexical-binding: t; -*-
 ;;
 ;; Copyright © 2016–present Mark Karpov <markkarpov92@gmail.com>
 ;;
@@ -6,7 +6,7 @@
 ;; URL: https://github.com/mrkkrp/fix-input
 ;; Version: 0.1.1
 ;; Package-Requires: ((emacs "24.4"))
-;; Keywords: input method
+;; Keywords: convenience input
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
