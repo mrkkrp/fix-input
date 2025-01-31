@@ -2,7 +2,7 @@
 
 [![License GPL 3](https://img.shields.io/badge/license-GPL_3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.txt)
 [![MELPA](https://melpa.org/packages/fix-input-badge.svg)](https://melpa.org/#/fix-input)
-![CI](https://github.com/mrkkrp/fix-input/workflows/CI/badge.svg?branch=master)
+[![CI](https://github.com/mrkkrp/fix-input/actions/workflows/ci.yaml/badge.svg)](https://github.com/mrkkrp/fix-input/actions/workflows/ci.yaml)
 
 Let's suppose you have switched to an alternative keyboard layout. Chances
 are you're going to use that layout everywhere, not only in Emacs, so you
