@@ -44,8 +44,8 @@ for example:
                               ;; the same layout with Dvorak
 ```
 
-Here the new input method is named `"dvorak-russian"`. With Dvorak layout,
-this will let users to use the familiar layout when they wish to type
+Here the new input method is named `"dvorak-russian"`. With the Dvorak
+layout, this will let users use the familiar layout when they wish to type
 Russian.
 
 Once generated, the layout can be used as usual.

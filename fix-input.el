@@ -50,7 +50,7 @@
   "Adjust an input method to an alternative layout on the OS level.
 
 In fact, an entirely new input method is generated.  The
-BASE-METHOD describes the new alternative layout on OS level.
+BASE-METHOD describes the new alternative layout on the OS level.
 The OLD-METHOD will be copied as NEW-METHOD so the layout in
 which the keys are laid on the keyboard when the OLD-METHOD is
 used with QWERTY will be the same when the NEW-METHOD is used
@@ -79,10 +79,10 @@ defined with it), but it does not select the new package."
                (cl-destructuring-bind (ch . val) item
                  ;; NOTE The approach may be brittle, since it does not take
                  ;; into account all possible formats of the translation map
-                 ;; (described in the docs for `quile-map-p'), only for the
+                 ;; (described in the docs for `quail-map-p'), only for the
                  ;; format I have encountered in practice with input methods
-                 ;; that are of interest for me. If this does not work for
-                 ;; you, open an issue on GitHub issue tracker of the
+                 ;; that are of interest to me. If this does not work for
+                 ;; you, open an issue on the GitHub issue tracker of the
                  ;; project (or better yet open a PR if you can fix it
                  ;; yourself).
                  (cons
